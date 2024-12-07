@@ -7,50 +7,114 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>图片压缩工具</h1>
-        
-        <!-- 上传区域 -->
-        <div class="upload-area" id="dropZone">
-            <svg class="upload-icon" viewBox="0 0 24 24">
-                <path d="M12 4L12 16M12 4L8 8M12 4L16 8M4 13V18C4 19.1046 4.89543 20 6 20H18C19.1046 20 20 19.1046 20 18V13" 
-                      stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
-            </svg>
-            <p>拖拽图片到这里或点击上传</p>
-            <input type="file" id="fileInput" accept="image/png,image/jpeg" hidden>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <svg class="nav-logo" viewBox="0 0 24 24">
+                    <path d="M21 14V10C21 9.44772 20.5523 9 20 9H4C3.44772 9 3 9.44772 3 10V14C3 14.5523 3.44772 15 4 15H20C20.5523 15 21 14.5523 21 14Z" 
+                          stroke="currentColor" fill="none" stroke-width="2"/>
+                    <path d="M12 7L16 11M12 7L8 11M12 7V17" 
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span class="nav-title">图片压缩工具</span>
+            </div>
+            <button class="theme-toggle" id="themeToggle">
+                <svg class="theme-icon" viewBox="0 0 24 24">
+                    <path class="sun" d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Zm0 1.5a7 7 0 1 1 0-14 7 7 0 0 1 0 14Zm0-16a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0V4a1 1 0 0 1 1-1Zm0 15a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0v-2a1 1 0 0 1 1-1ZM4 12a1 1 0 0 1 1-1h2a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1Zm15 0a1 1 0 0 1 1-1h2a1 1 0 1 1 0 2h-2a1 1 0 0 1-1-1Z" fill="currentColor"/>
+                    <path class="moon" d="M12 3a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V4a1 1 0 0 1 1-1Zm5.66 2.34a1 1 0 0 1 0 1.42l-.71.7a1 1 0 1 1-1.42-1.4l.71-.72a1 1 0 0 1 1.42 0ZM12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-8 4a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1Zm15 0a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2h-1a1 1 0 0 1-1-1ZM6.34 6.34a1 1 0 0 1 0 1.42l-.71.7a1 1 0 0 1-1.42-1.4l.71-.72a1 1 0 0 1 1.42 0Zm12.72 12.72a1 1 0 0 1 0 1.42l-.71.7a1 1 0 1 1-1.42-1.4l.71-.72a1 1 0 0 1 1.42 0ZM12 19a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1Z" fill="currentColor"/>
+                </svg>
+            </button>
         </div>
-
-        <!-- 预览和控制区域 -->
-        <div class="preview-container" id="previewContainer" style="display: none;">
-            <div class="preview-section">
-                <div class="preview-box">
-                    <h3>原图</h3>
-                    <img id="originalPreview">
-                    <div class="file-info">
-                        <span>大小：</span>
-                        <span id="originalSize">0 KB</span>
+    </nav>
+    <div class="layout">
+        <aside class="sidebar">
+            <nav class="side-nav">
+                <ul class="nav-list">
+                    <li class="nav-item active" data-target="home">
+                        <svg class="nav-icon" viewBox="0 0 24 24">
+                            <path d="M21 15v4H3v-4M12 3v12M12 3l-4 4M12 3l4 4" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>首页</span>
+                    </li>
+                    <li class="nav-item" data-target="compressor">
+                        <svg class="nav-icon" viewBox="0 0 24 24">
+                            <path d="M4 16v4h16v-4M12 3L4 9h16l-8-6z" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>图片压缩</span>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <div class="content-background">
+                <div class="home-content">
+                    <div class="container">
+                        <h1>欢迎来到首页</h1>
+                        <!-- 首页的内容 -->
                     </div>
                 </div>
-                
-                <div class="preview-box">
-                    <h3>压缩后</h3>
-                    <img id="compressedPreview">
-                    <div class="file-info">
-                        <span>大小：</span>
-                        <span id="compressedSize">0 KB</span>
+                <div class="compressor-content" style="display: none;">
+                    <div class="container">
+                        <div class="compressor-header">
+                            <svg class="compressor-icon" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zm0 7l10 5-10 5-10-5 10-5z" fill="currentColor"/>
+                            </svg>
+                            <h1>图片压缩</h1>
+                        </div>
+                        
+                        <!-- 上传区域 -->
+                        <div class="upload-area" id="dropZone">
+                            <svg class="upload-icon" viewBox="0 0 24 24">
+                                <path d="M12 4L12 16M12 4L8 8M12 4L16 8M4 13V18C4 19.1046 4.89543 20 6 20H18C19.1046 20 20 19.1046 20 18V13" 
+                                      stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+                            </svg>
+                            <p>拖拽图片到这里或点击上传</p>
+                            <input type="file" id="fileInput" accept="image/png,image/jpeg" hidden>
+                        </div>
+
+                        <!-- 预览和控制区域 -->
+                        <div class="preview-container" id="previewContainer" style="display: none;">
+                            <div class="preview-section">
+                                <div class="preview-box">
+                                    <h3>原图</h3>
+                                    <div class="image-info">
+                                        <span>大小：</span>
+                                        <span id="originalSize">0 KB</span>
+                                    </div>
+                                    <img id="originalPreview">
+                                </div>
+                                
+                                <div class="preview-box">
+                                    <h3>压缩后</h3>
+                                    <div class="preview-wrapper">
+                                        <img id="compressedPreview">
+                                        <button class="compare-btn" id="compareBtn">
+                                            <svg viewBox="0 0 24 24" class="compare-icon">
+                                                <path d="M12 4v16m-8-8h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                            </svg>
+                                            对比
+                                        </button>
+                                    </div>
+                                    <div class="image-info">
+                                        <span>大小：</span>
+                                        <span id="compressedSize">0 KB</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="controls">
+                                <div class="quality-control">
+                                    <label for="quality">压缩质量：</label>
+                                    <input type="range" id="quality" min="0" max="100" value="80">
+                                    <span id="qualityValue">80%</span>
+                                </div>
+                                <button id="downloadBtn" class="download-btn">下载压缩后的图片</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="controls">
-                <div class="quality-control">
-                    <label for="quality">压缩质量：</label>
-                    <input type="range" id="quality" min="0" max="100" value="80">
-                    <span id="qualityValue">80%</span>
-                </div>
-                <button id="downloadBtn" class="download-btn">下载压缩后的图片</button>
-            </div>
-        </div>
+        </main>
     </div>
     <script src="script.js"></script>
 </body>
