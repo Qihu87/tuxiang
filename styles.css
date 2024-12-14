@@ -23,6 +23,7 @@ body {
 
 /* 主容器样式 */
 .container {
+<<<<<<< HEAD
     flex: 1;           /* 占满剩余空间 */
     padding: 24px;     /* 统一内边距 */
     overflow-y: auto;  /* 允许垂直滚动 */
@@ -30,6 +31,11 @@ body {
     /* max-width: calc(100% - 48px); 内容区域最大宽度，减去左右padding */
     margin: 0;         /* 移除外边距 */
     align-self: flex-start; /* 从左侧开始布局 */
+=======
+    max-width: 1200px;
+    margin: 112px auto 40px;
+    padding: 0 20px;
+>>>>>>> 311c149c8e87223f109b59526d067af0de0883ee
 }
 
 /* 标题样式 */
@@ -50,11 +56,14 @@ h1 {
     border: 0px dashed #DEDEDE;
     cursor: pointer;
     transition: all 0.3s ease;
+<<<<<<< HEAD
     background-image: url(./assets/icons/shangchuan.png);
     max-width: 1080px;
     min-width: 400px;
     margin-left: auto;
     margin-right: auto;
+=======
+>>>>>>> 311c149c8e87223f109b59526d067af0de0883ee
     /* box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.03); */
 
 }
@@ -93,9 +102,16 @@ h1 {
 
 /* 预览框样式 */
 .preview-box {
+<<<<<<< HEAD
     width: 100%;
     display: flex;
     flex-direction: column;
+=======
+    background: white;
+    padding: 24px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+>>>>>>> 311c149c8e87223f109b59526d067af0de0883ee
 }
 
 /* 预览框标题样式 */
@@ -107,11 +123,16 @@ h1 {
 
 /* 预览图片样式 */
 .preview-box img {
+<<<<<<< HEAD
+=======
+    display: block;
+>>>>>>> 311c149c8e87223f109b59526d067af0de0883ee
     width: 100%;
     height: auto;
     max-height: 300px; /* 减小图片最大高度 */
     object-fit: contain;
     border-radius: 8px;
+<<<<<<< HEAD
     order: 1;
 }
 
@@ -125,6 +146,9 @@ h1 {
     color: #666;
     font-size: 14px;
     order: 2;
+=======
+    transition: all 0.2s ease;
+>>>>>>> 311c149c8e87223f109b59526d067af0de0883ee
 }
 
 /* 文件信息样式 */
@@ -135,10 +159,18 @@ h1 {
 
 /* 控制区域样式 */
 .controls {
+<<<<<<< HEAD
     display: flex;
     flex-direction: column;
     gap: 16px;
     margin-top: 40px; /* 与压缩后预览图对齐 */
+=======
+    background: white;
+    padding: 24px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+    margin-top: 24px;
+>>>>>>> 311c149c8e87223f109b59526d067af0de0883ee
 }
 
 /* 质量控制区域样式 */
@@ -147,6 +179,11 @@ h1 {
     align-items: center;
     gap: 16px;
     white-space: nowrap;
+}
+
+.quality-control label {
+    min-width: 84px;
+    color: #333;
 }
 
 .quality-control label {
@@ -180,12 +217,13 @@ input[type="range"]::-webkit-slider-thumb {
     background: var(--primary-color);
     color: white;
     border: none;
-    padding: 12px 24px;
+    padding: 14px 24px;
     border-radius: var(--border-radius);
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.2s ease;
+<<<<<<< HEAD
     white-space: nowrap;
     min-width: 200px; /* 设置最小宽度 */
 }
@@ -306,12 +344,21 @@ input[type="range"]::-webkit-slider-thumb {
     font-weight: 500;
     cursor: pointer;
     transition: all 0.2s ease;
+=======
+>>>>>>> 311c149c8e87223f109b59526d067af0de0883ee
     width: 100%;
 }
 
 .download-btn:hover {
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+<<<<<<< HEAD
+=======
+}
+
+.download-btn:active {
+    transform: translateY(0);
+>>>>>>> 311c149c8e87223f109b59526d067af0de0883ee
 }
 
 .download-btn:active {
@@ -719,6 +766,7 @@ input[type="range"]::-webkit-slider-thumb {
     .image-lists-container {
         flex-direction: column;  /* 小屏幕时改为上下排列 */
     }
+<<<<<<< HEAD
 
     /* .image-lists { */
         /* flex-direction: column;  小屏幕时改为垂直布局 */
@@ -773,11 +821,107 @@ input[type="range"]::-webkit-slider-thumb {
     background: #1b1b1b;
     color: white;
     border: none;
+=======
+} 
+
+/* 图片信息样式 */
+.image-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    color: #666;
+    font-size: 14px;
+}
+
+/* 预览包装器样式 */
+.preview-wrapper {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* 对比按钮样式 */
+.compare-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 6px;
+    color: var(--primary-color);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 10;
+}
+
+.compare-btn:hover {
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+}
+
+.compare-btn:active {
+    transform: scale(0.98);
+}
+
+/* 对比图标样式 */
+.compare-icon {
+    width: 16px;
+    height: 16px;
+}
+
+/* 图片样式优化 */
+.preview-box img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+/* 控制区域样式优化 */
+.controls {
+    background: white;
+    padding: 24px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+    margin-top: 24px;
+}
+
+/* 质量控制样式优化 */
+.quality-control {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.quality-control label {
+    min-width: 84px;
+    color: #333;
+}
+
+/* 下载按钮样式优化 */
+.download-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 14px 24px;
+>>>>>>> 311c149c8e87223f109b59526d067af0de0883ee
     border-radius: var(--border-radius);
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.2s ease;
+<<<<<<< HEAD
 }
 /* 压缩控制区域样式 */
 .compress-controls {
@@ -792,3 +936,232 @@ input[type="range"]::-webkit-slider-thumb {
     margin-right: auto;
 }
 
+=======
+    width: 100%;
+}
+
+.download-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.download-btn:active {
+    transform: translateY(0);
+}
+
+/* 导航栏样式 */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: white;
+    /* box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05); */
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: none; /* 去掉宽度限制 */
+    margin: 0; /* 确保贴合浏览器边缘 */
+    padding: 0 20px 0 24px; /* 左边距 12px，右边距 20px */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-left {
+    display: inline-flex; /* 保持水平布局 */
+    align-items: center; /* 垂直居中内容 */
+    height: 60px; /* 确保导航条区域高度一致 */
+}
+
+.nav-logo {
+    width: 32px;
+    height: 32px;
+    color: var(--primary-color);
+}
+
+.nav-title {
+    font-size: 20px;
+    font-weight: 600;
+    padding: 12px;
+    color: var(--primary-color);
+}
+
+.theme-toggle {
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.theme-toggle:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.theme-icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* 暗色主题样式 */
+[data-theme="dark"] {
+    --primary-color: #ffffff;
+    --background-color: #1a1a1a;
+}
+
+[data-theme="dark"] .navbar {
+    background: #242424;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* 布局容器 */
+.layout {
+    display: flex;
+    gap: 24px;
+    max-width: 1200px;
+    margin: 72px auto 40px;
+    padding: 0 20px 0 24px;
+}
+
+/* 侧边栏样式 */
+.sidebar {
+    flex-shrink: 0;
+    width: 253px;
+}
+
+/* 侧边导航样式 */
+.side-nav {
+    position: fixed;
+    width: 253px;
+    height: calc(100vh - 84px);
+    /* background: rgb(255, 255, 255); */
+    border-radius: 24px;
+    padding: 12px;
+    /* box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04); */
+    left: 12px;
+}
+
+/* 导航列表样式 */
+.nav-list {
+    list-style: none;
+}
+
+/* 导航项样式 */
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    margin-bottom: 4px;
+    border-radius: 12px;
+    color: #86868b;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.nav-item:hover {
+    background: rgba(0, 0, 0, 0.04);
+    color: #000000;
+}
+
+.nav-item.active {
+    background: #ffffff;
+    color: #000000;
+    font-weight: 600;
+}
+
+/* 确保图标颜色与文字颜色一致 */
+.nav-item.active .nav-icon {
+    color: #000000;
+}
+
+/* 导航图标样式 */
+.nav-icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* 主内容区域样式 */
+.main-content {
+    flex-grow: 1;
+    min-width: 0;
+    padding: 12px 12px 12px 12px;
+}
+
+/* 内容背景样式 */
+.content-background {
+    background: white;
+    border-radius: 24px;
+    min-height: calc(100vh - 84px);
+    /* box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04); */
+    position: absolute; /* 绝对定位 */
+    left: calc(253px + 24px); /* 距离左侧导航+间距 12px */
+    right: 12px; /* 距离右侧 12px */
+    top: 72px; /* 距离顶部导航栏 84px（根据设计调整） */
+    bottom: 12px; /* 距离底部 12px（可选，视需求而定） */
+}
+
+/* 修改容器样式 */
+.container {
+    max-width: none;
+    margin: 0;
+    padding: 24px;
+}
+
+/* 暗色主题适配 */
+[data-theme="dark"] .content-background {
+    background: #242424;
+}
+
+[data-theme="dark"] .side-nav {
+    background: #242424;
+}
+
+[data-theme="dark"] .nav-item {
+    color: #86868b;
+}
+
+[data-theme="dark"] .nav-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+[data-theme="dark"] .nav-item.active {
+    background: #ffffff;
+    color: #000000;
+}
+
+/* 图片压缩模块标题样式 */
+.compressor-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.compressor-icon {
+    width: 40px;
+    height: 40px;
+    color: var(--primary-color);
+}
+
+/* 修改标题样式，确保与图标对齐 */
+.compressor-header h1 {
+    margin: 0;
+    text-align: left;
+    line-height: 40px;
+}
+>>>>>>> 311c149c8e87223f109b59526d067af0de0883ee

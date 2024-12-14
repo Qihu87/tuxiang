@@ -7,7 +7,11 @@ const path = require('path');
 
 // 设置主机名和端口号
 const hostname = '127.0.0.1';
+<<<<<<< HEAD
 const port = 3002;
+=======
+const port = 3001;
+>>>>>>> 311c149c8e87223f109b59526d067af0de0883ee
 
 const server = http.createServer((req, res) => {
   // 获取请求的文件路径
@@ -39,9 +43,12 @@ const server = http.createServer((req, res) => {
     case '.ico':
       contentType = 'image/x-icon';
       break;
+<<<<<<< HEAD
     case '.svg':
       contentType = 'image/svg+xml';
       break;
+=======
+>>>>>>> 311c149c8e87223f109b59526d067af0de0883ee
   }
 
   // 读取文件
